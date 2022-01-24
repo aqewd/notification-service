@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Application.Common.Helpers;
 using Application.Common.Interfaces.Services;
-using Application.Common.Models;
 using Domain.Common;
 using Domain.Enums;
 using Infrastructure.Validators;
