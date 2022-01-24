@@ -2,35 +2,24 @@
 using System.Threading.Tasks;
 using Application.Handlers.CreateNotification;
 using Application.Handlers.GetNotificationStatus;
-using Domain.Enums;
-using Infrastructure.Services.AndroidNotification;
-using Infrastructure.Services.IOsNotification;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
     [Route("notification")]
     public class NotificationController : ApiController
     {
-        [HttpPost("create/android")]
-        public async Task<ActionResult> CreateAndroidNotification([FromBody] AndroidNotificationData data)
+        [HttpPost("create")]
+        public async Task<ActionResult> Create([FromBody] CreateNotificationModel model)
         {
-            var command = new CreateNotificationCommand
-            {
-                Notification = data,
-                Type = NotificationType.Android
-            };
-            var result = await Mediator.Send(command);
-            return Ok(result);
-        }
+            if (model is null)
+                return BadRequest();
 
-        [HttpPost("create/ios")]
-        public async Task<ActionResult> CreateIOsNotification([FromBody] IOsNotificationData data)
-        {
             var command = new CreateNotificationCommand
             {
-                Notification = data,
-                Type = NotificationType.iOs
+                Notification = model.GetDataByType(),
+                Type = model.Type
             };
             var result = await Mediator.Send(command);
             return Ok(result);
