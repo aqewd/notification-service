@@ -3,6 +3,7 @@
 <br/>
 
 This is a solution template for creating a Notification emulator with .NET 5.
+
 ## Technologies
 
 * [.NET 5](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-5.0)
@@ -14,10 +15,8 @@ This is a solution template for creating a Notification emulator with .NET 5.
 ## Getting Started
 
 1. Install the latest [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
-2. Navigate to `src/WebApi` and run `dotnet run` to launch the back end (ASP.NET Core Web API)
-
-### Docker Configuration
-
+2. Navigate to `src/WebApi` and run `dotnet run` to launch the API (ASP.NET Core Web API)
+3. Go To [swagger page](https://localhost:5001/swagger/index.html)
 
 ## Overview
 
@@ -27,7 +26,7 @@ This will contain all entities, enums, exceptions, interfaces, types and logic s
 
 ### Application
 
-This layer contains all application logic. It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, if the application need to access a notification service, a new interface would be added to application and an implementation would be created within infrastructure.
+This layer contains all application logic. It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, the application needed to access a notification service, a interface was added to application layer and an implementation was created within infrastructure.
 
 ### Infrastructure
 
