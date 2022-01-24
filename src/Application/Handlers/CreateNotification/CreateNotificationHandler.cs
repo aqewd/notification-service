@@ -1,16 +1,10 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Common.Exceptions;
-using Application.Common.Helpers;
 using Application.Common.Interfaces.Repositories;
 using Application.Common.Interfaces.Services;
 using Application.Common.Models;
-using Domain.Common;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
-using Microsoft.Extensions.Logging;
 
 namespace Application.Handlers.CreateNotification
 {
