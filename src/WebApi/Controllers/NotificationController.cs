@@ -2,9 +2,6 @@
 using System.Threading.Tasks;
 using Application.Handlers.CreateNotification;
 using Application.Handlers.GetNotificationStatus;
-using Domain.Enums;
-using Infrastructure.Services.AndroidNotification;
-using Infrastructure.Services.IOsNotification;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Models;
 
